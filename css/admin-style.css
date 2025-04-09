@@ -1,0 +1,221 @@
+/**
+ * Стили админки для плагина "Генератор описаний товаров"
+ */
+
+/* Контейнеры описаний */
+.deepseek-description-container {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Статус индикатор */
+.status-dot {
+    font-size: 24px;
+    line-height: 1;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+}
+
+.has-desc {
+    color: #46b450;
+}
+
+.no-desc {
+    color: #aaa;
+}
+
+.retry {
+    color: #ff9900;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Кнопки редактирования */
+.ai-button {
+    background: #4c96d6;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 4px;
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.ai-button:hover {
+    background: #3983c3;
+}
+
+.edit-button {
+    background: transparent;
+    color: #666;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    line-height: 1;
+}
+
+.edit-button:hover {
+    color: #0073aa;
+}
+
+/* Редактор */
+.full-desc-editor,
+.short-desc-editor {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 300px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Текстовые области */
+.new-full-desc,
+.new-short-desc {
+    width: 100%;
+    min-height: 80px;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 12px;
+    resize: vertical;
+}
+
+.new-short-desc {
+    min-height: 60px;
+}
+
+/* Кнопки действий */
+.action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.action-buttons .button {
+    min-width: 30px;
+    padding: 0 4px;
+    line-height: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+}
+
+/* Сообщения */
+.response-message {
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.response-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.response-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Страница настроек */
+.deepseek-info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Ширина колонок */
+.column-deepseek_full_description,
+.column-deepseek_short_description {
+    width: 10%;
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+    .has-desc {
+        color: #46b450;
+    }
+    
+    .no-desc {
+        color: #666;
+    }
+    
+    .retry {
+        color: #ffaa00;
+    }
+    
+    .edit-button {
+        color: #aaa;
+    }
+    
+    .edit-button:hover {
+        color: #00b9eb;
+    }
+    
+    .ai-button {
+        background: #3983c3;
+    }
+    
+    .ai-button:hover {
+        background: #276292;
+    }
+    
+    .full-desc-editor,
+    .short-desc-editor {
+        background: #32373c;
+        border-color: #50575e;
+    }
+    
+    .new-full-desc,
+    .new-short-desc {
+        background: #3c434a;
+        border-color: #50575e;
+        color: #f0f0f1;
+    }
+    
+    .response-message.success {
+        background-color: #133a1b;
+        color: #8bd9a8;
+        border-color: #1e552b;
+    }
+    
+    .response-message.error {
+        background-color: #4a1c24;
+        color: #e68a95;
+        border-color: #66272f;
+    }
+    
+    .deepseek-info-box {
+        background: #32373c;
+        border-color: #50575e;
+        color: #f0f0f1;
+    }
+}
